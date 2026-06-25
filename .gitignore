@@ -1,0 +1,30 @@
+# Hermes Desktop Organization — gitignore
+# --------------------------------------
+# Only track the documentation layer. Bulk binary content stays local.
+
+# The actual files I do want to commit
+!README.md
+!CONSOLIDATION_REPORT.md
+!MANIFEST.csv
+!consolidate.sh
+!build_report.py
+!.gitignore
+
+# Everything else (binary trees) is ignored
+/*
+!/README.md
+!/CONSOLIDATION_REPORT.md
+!/MANIFEST.csv
+!/consolidate.sh
+!/build_report.py
+!/.gitignore
+
+# But explicitly re-allow the docs at the root (already allowed above)
+
+# Don't ignore macOS noise inside the docs layer
+.DS_Store
+*.swp
+*.tmp
+
+# If you ever want to commit a small sample of each category, do it explicitly:
+# !Media/Images/.gitkeep
