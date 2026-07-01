@@ -1,6 +1,6 @@
 # Desktop Consolidation Report
 
-**Generated:** 2026-06-25T09:04:06  
+**Generated:** 2026-07-01T05:24:09  
 **Host:** macOS (Hermes session)  
 **Source:** `~/Desktop/_Organized/` (1,123 original loose items moved; 195,289 total files after expansion into existing project dirs)  
 
@@ -8,10 +8,10 @@
 
 ## 1. Summary
 
-- **Total files inventoried:** 195,394
-- **Total size:** 47.5 GB
+- **Total files inventoried:** 195,439
+- **Total size:** 47.6 GB
 - **Categories created:** 7 (Documents, Media/Audio, Media/Video, Media/Images, Code, Archives, _Projects)
-- **Project directories preserved:** 29
+- **Project directories preserved:** 30
 
 ## 2. Categorization breakdown
 
@@ -20,11 +20,11 @@
 | Documents | 5 | 2.2 MB | CV, Prijava, Terms HTML |
 | Media/Audio | 28 | 287.4 MB | WAV/MP3/AIF |
 | Media/Video | 40 | 4.8 GB | MOV/MP4 screen recordings, downloads |
-| Media/Images | 1009 | 452.6 MB | PNG/JPG/SVG/PXD/AVIF/TIFF |
+| Media/Images | 1013 | 453.0 MB | PNG/JPG/SVG/PXD/AVIF/TIFF |
 | Code | 6 | 221.4 KB | JS/PHP/JSON config |
 | Archives | 4 | 13.0 MB | ZIP/DMG |
 | Other | 1 | 3.8 KB | Unclassified (`editors_.json\`) |
-| _Projects/* | 194,299 | 42.0 GB | Pre-existing project directories |
+| _Projects/* | 194,301 | 42.0 GB | Pre-existing project directories |
 
 ## 3. Project directories (preserved as-is)
 
@@ -53,9 +53,10 @@
 | `kais aps` | 90 | 738.6 KB | Personal vault / AI studio exports |
 | `experiment_animations` | 902 | 482.9 KB | Experiment framework files |
 | `m` | 2 | 212.5 KB | Audio project scratch |
-| `aistudio-export-20260603-0048` | 53 | 47.6 KB | Google AI Studio export (INDEX.md, multiple sub-projects) |
+| `aistudio-export-20260603-0048` | 54 | 59.6 KB | Google AI Studio export (INDEX.md, multiple sub-projects) |
 | `hermes` | 4 | 45.9 KB | Hermes project scratch (index.html) |
 | `instagram_simulation` | 4 | 8.7 KB | Simulated Instagram data (posts/, simulated_profiles.json) |
+| `.DS_Store` | 1 | 6.0 KB | Project directory |
 | `experiment_tracking` | 2 | 2.6 KB | Experiment framework files |
 | `experiment_setup` | 2 | 2.0 KB | Experiment framework files |
 | `applescript` | 1 | 1.3 KB | AppleScript source |
@@ -109,12 +110,12 @@ The following items contain personal information and are **excluded from any pub
 | `.ts` | 19,887 |
 | `.map` | 14,442 |
 | `.pyi` | 8,940 |
-| `.(none)` | 6,887 |
-| `.png` | 4,661 |
+| `.(none)` | 6,911 |
+| `.png` | 4,665 |
 | `.dat` | 4,384 |
 | `.json` | 4,255 |
 | `.rsc` | 3,579 |
-| `.md` | 2,495 |
+| `.md` | 2,497 |
 | `.mjs` | 1,827 |
 | `.txt` | 1,374 |
 | `.so` | 1,315 |
