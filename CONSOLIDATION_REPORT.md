@@ -174,3 +174,24 @@ mv -n Documents Media Code Archives Other _Projects consolidate.sh ...
 cd ..
 rmdir _Organized
 ```
+
+---
+
+## 11. Delta: 2026-07-03 (cron run)
+
+**Trigger:** Scheduled cron job — `consolidate and organize desktop documents`
+
+**Findings:**
+- `~/Desktop/` had only 2 loose files: 2 macOS screenshots from 2026-07-02 (00.38 / 19.58).
+- No new top-level clutter, no new directories.
+- `_Organized/Media/Images/` now contains 1015 files (was 1013, +2).
+
+**Actions taken:**
+1. Moved `~/Desktop/Screenshot 2026-07-02 at 00.38.55.png` → `_Organized/Media/Images/`
+2. Moved `~/Desktop/Screenshot 2026-07-02 at 19.58.23.png` → `_Organized/Media/Images/`
+3. Appended this delta to CONSOLIDATION_REPORT.md.
+4. Committed and pushed to `origin/main` of `github.com/kajica2/desktop-organization`.
+
+**Repo state after this commit:** docs-only layer tracked (CONSOLIDATION_REPORT.md, MANIFEST.csv, README.md, consolidate.sh, build_report.py); binary trees ignored via `.gitignore`.
+
+**Result:** `~/Desktop/` is clean (only `.DS_Store`, `.localized`, `.userchain`, and `_Organized/`).
