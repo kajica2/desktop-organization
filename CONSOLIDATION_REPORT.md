@@ -234,7 +234,8 @@ The cron prompt reads "consolidate and organize desktop documents". That scope i
 | 2026-07-03  | +2 screenshots    | `Media/Images/`                | `a405709` — 2026-07-03 cron delta            |
 | 2026-07-04  | 0                 | — (no-op)                      | `e49bcce` — 2026-07-04 cron delta             |
 | 2026-07-05  | 0                 | — (no-op)                      | `19480a0` — 2026-07-05 cron delta             |
-| 2026-07-06  | 0                 | — (no-op)                      | (this commit) — 2026-07-06 cron delta        |
+| 2026-07-06  | 0                 | — (no-op)                      | `e9cc979` — 2026-07-06 cron delta             |
+| 2026-07-07  | 0                 | — (no-op)                      | (this commit) — 2026-07-07 cron delta        |
 
 **Repo URL:** https://github.com/kajica2/desktop-organization
 
@@ -287,6 +288,35 @@ The cron prompt reads "consolidate and organize desktop documents". That scope i
 1. Verified `~/Desktop/` is empty of loose items.
 2. Verified git repo at `~/Desktop/_Organized/` is clean and in sync with `origin/main` (HEAD `d718cba`).
 3. Appended this delta and a new operating-log row (2026-07-06) to `CONSOLIDATION_REPORT.md`.
+4. Committed and pushed to `origin/main` of `github.com/kajica2/desktop-organization`.
+
+**Repo state after this commit:**
+- Tracked: `CONSOLIDATION_REPORT.md`, `MANIFEST.csv`, `README.md`, `consolidate.sh`, `build_report.py`, `.gitignore`
+- Ignored: all binaries >50 MB, all video/audio files, all PDFs, all `_Projects/*`, and the `Media/Video/`, `Media/Audio/`, `Archives/` subtrees (sensitive / oversized material kept local-only).
+
+**Result:** Desktop remains clean. Repo state on GitHub updated only by appending this delta entry.
+
+---
+
+## 16. Delta: 2026-07-07 (cron run — no-op)
+
+**Trigger:** Scheduled cron job — `consolidate and organize desktop documents`
+
+**Findings:**
+- `~/Desktop/` has **0 loose items**. Only hidden macOS metadata files (`.DS_Store`, `.localized`, `.userchain`) and the `_Organized/` directory remain — exactly as left by the 2026-07-06 delta.
+- No new top-level files, no new directories under `~/Desktop/`.
+- No changes anywhere under `~/Desktop/_Organized/` since the 2026-07-06 commit (`e9cc979`), verified via `find ... -newer CONSOLIDATION_REPORT.md` and `git status` showing a clean working tree.
+- `HEAD = e9cc979` matches upstream `origin/main` (committed 2026-07-06 at 09:01 local; no further work has occurred).
+- Category file counts unchanged from 2026-07-06: Documents 5 · Media/Audio 28 · Media/Video 40 · Media/Images 1015 · Code 6 · Archives 4 · Other 1.
+- Tracked repo size on disk: ~38 KB of plain-text docs (CONSOLIDATION_REPORT.md, MANIFEST.csv, README.md, consolidate.sh, build_report.py, .gitignore). All binary / sensitive material remains local-only under `.gitignore` exclusions.
+
+**Scope note:**
+The cron prompt reads "consolidate and organize desktop documents". That scope is `~/Desktop/` — which has been fully consolidated since 2026-07-01 and has stayed clean for four consecutive cron runs (07-04, 07-05, 07-06, 07-07). The 108 GB of clutter in `~/Downloads/` (907 loose files + 87 subdirectories) remains **out of scope** for this no-touch cron: it carries risk (mass-rename, mass-delete, accidental data loss) and requires user judgement about what to keep/toss. It is noted here so a future manual sweep can pick it up.
+
+**Actions taken:**
+1. Verified `~/Desktop/` is empty of loose items.
+2. Verified git repo at `~/Desktop/_Organized/` is clean and in sync with `origin/main` (HEAD `e9cc979`).
+3. Appended this delta and a new operating-log row (2026-07-07) to `CONSOLIDATION_REPORT.md`.
 4. Committed and pushed to `origin/main` of `github.com/kajica2/desktop-organization`.
 
 **Repo state after this commit:**
