@@ -239,7 +239,8 @@ The cron prompt reads "consolidate and organize desktop documents". That scope i
 | 2026-07-08  | 0                 | — (no-op)                      | `57f453e` — 2026-07-08 cron delta             |
 | 2026-07-09  | 0                 | — (no-op)                      | `8851846` — 2026-07-09 cron delta             |
 | 2026-07-10  | 0                 | — (no-op)                      | `ccf49d0` — 2026-07-10 cron delta             |
-| 2026-07-11  | 0                 | — (no-op)                      | (see §20 — pending commit from this run)      |
+| 2026-07-11  | 0                 | — (no-op)                      | `f43bd72` — 2026-07-11 cron delta             |
+| 2026-07-12  | 11                | `Media/Images/`               | (see §21 — pending commit from this run)      |
 
 **Repo URL:** https://github.com/kajica2/desktop-organization
 
@@ -451,3 +452,48 @@ The user flagged a `'function' object has no attribute 'st_mtime'` error observe
 - Ignored: all binaries >50 MB, all video/audio files, all PDFs, all `_Projects/*`, and the `Media/Video/`, `Media/Audio/`, `Archives/` subtrees (sensitive / oversized material kept local-only).
 
 **Result:** Desktop remains clean. Repo state on GitHub updated only by appending this delta entry.
+
+## 21. Delta: 2026-07-12 (cron run — +11 screenshots moved)
+
+**Trigger:** Scheduled cron job — `consolidate and organize desktop documents` (job `0fcccc37acf2`, run at 2026-07-12).
+
+**Findings:**
+- `~/Desktop/` had **11 loose items** today — the first non-zero load since the initial 2026-07-01 consolidation. After eight consecutive no-op runs (2026-07-04 through 2026-07-11), today broke the streak with **10 fresh macOS screenshots + 1 debug capture** dropped during an early-morning work session (01:58 – 06:36 CEST).
+- All 11 are PNG images — the canonical loose-file pattern this consolidation is built to absorb.
+- `~/Desktop/_Organized/` working tree was clean before this run, `HEAD = f43bd72` matching `origin/main` (verified via `git status` and `git rev-list --left-right --count origin/main...main` → `0	0`).
+- Image count baseline before this run: **1015** (held steady since 2026-07-04).
+
+**Files moved (11 → `Media/Images/`):**
+
+| # | File | Size | Notes |
+|---|------|------|-------|
+| 1 | `Screenshot 2026-07-12 at 03.36.26.png` | 26 KB | Early-morning capture |
+| 2 | `Screenshot 2026-07-12 at 03.39.01.png` | 27 KB | Pair with #1 (3-min window) |
+| 3 | `Screenshot 2026-07-12 at 04.32.47.png` | 397 KB | Larger capture (~4× normal) |
+| 4 | `Screenshot 2026-07-12 at 04.56.09.png` | 214 KB | |
+| 5 | `Screenshot 2026-07-12 at 05.32.37.png` | 88 KB | |
+| 6 | `Screenshot 2026-07-12 at 05.51.11.png` | 45 KB | |
+| 7 | `Screenshot 2026-07-12 at 06.03.21.png` | 20 KB | |
+| 8 | `Screenshot 2026-07-12 at 06.12.13.png` | 116 KB | |
+| 9 | `Screenshot 2026-07-12 at 06.28.58.png` | 5 KB | Tiny — likely toast/notification |
+| 10 | `Screenshot 2026-07-12 at 06.36.01.png` | 24 KB | Last capture of the session |
+| 11 | `dbg-rule-1-recording-no-hud.png` | 277 KB | Debug capture (no HUD) — likely from `flexible-smart-videomaker` browser app session |
+
+**Routing rationale:** All 11 are PNG images, fitting the `Media/Images/` category used by all prior screenshot ingests (2026-07-01, 2026-07-02, 2026-07-03 deltas). No PDFs, no code, no archives — the entire 11-item load fits one bucket.
+
+**Actions taken:**
+1. Verified the loose-files count (11) and the git baseline (`HEAD = f43bd72`, in sync with `origin/main`).
+2. Moved all 11 files into `_Organized/Media/Images/` in a single batch (`mv ...`).
+3. Verified `~/Desktop/` is now clean (only `.DS_Store`, `.localized`, `.userchain`, `Documents/`, `_Organized/` remain).
+4. Verified image count rose from **1015 → 1026** (Δ = +11, matches move count exactly). Other category counts unchanged: Documents 5 · Media/Audio 28 · Media/Video 40 · Code 6 · Archives 4 · Other 1 · `_Projects/` 30 subdirectories.
+5. Appended this delta and a new operating-log row (2026-07-12) to `CONSOLIDATION_REPORT.md`.
+6. Committed and pushed to `origin/main` of `github.com:kajica2/desktop-organization`.
+
+**Repo state after this commit:**
+- Tracked: `CONSOLIDATION_REPORT.md`, `MANIFEST.csv`, `README.md`, `consolidate.sh`, `build_report.py`, `.gitignore`
+- Ignored: all binaries >50 MB, all video/audio files, all PDFs, all `_Projects/*`, and the `Media/Video/`, `Media/Audio/`, `Archives/` subtrees (sensitive / oversized material kept local-only).
+- The 11 moved PNGs are NOT pushed — they join the existing 1015 PNGs already excluded from the repo (binary content, kept local-only under `.gitignore`'s `*.png` rule for the Media tree).
+
+**Result:** Desktop clean again. The eight-run no-op streak is broken, but the pipeline absorbed the load with zero surprises. No drift in any other category.
+
+**Note on `dbg-rule-1-recording-no-hud.png`:** This filename is distinctive and was not produced by `cmd+shift+3/4/5` — it's a debug-frame export from a tool, likely the `flexible-smart-videomaker` browser app (per the github.com/kajica2 repo description, which mentions "debug overlay"). Filed for the user's awareness; no action needed since PNGs are auto-excluded from the tracked repo anyway.
